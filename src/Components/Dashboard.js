@@ -52,9 +52,7 @@ export default function Dashboard() {
     // event.preventDefault();
     setLoading(true);
     console.log("to do submitted");
-    console.log(1, textMemory);
 
-    console.log(JSON.stringify(textMemory));
     // Upload user's file and get backs descriptor for our Skyfile
     const mem = JSON.stringify(textMemory);
     // const { skylink } = await client.uploadFile(mem);
@@ -75,10 +73,6 @@ export default function Dashboard() {
       //   const { data, dataLink } =
       await mySky.setJSON(filePath, jsonData);
       const { data } = await mySky.getJSON(filePath);
-    //   console.log(2, data);
-      //   console.log(dataLink);
-      //   console.log(5, data.textMemory);
-      // setSavedText(data.textMemory)
       setToDoItems([
         ...toDoItems,
         {
@@ -141,7 +135,6 @@ export default function Dashboard() {
         ) : null}
 
         <h1>Result</h1>
-        {console.log(9, toDoItems)}
         <List divided verticalAlign="middle">
           {toDoItems.map((todo, index) => (
             <List.Item key={index}>

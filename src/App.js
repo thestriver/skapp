@@ -71,7 +71,6 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(loggedIn)}
       {loggedIn ? (
         <Dashboard  />
       ) : (
